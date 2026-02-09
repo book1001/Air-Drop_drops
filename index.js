@@ -48,7 +48,7 @@ fetch('data/db_unique.json')
       container.className = 'entry';
 
       const randomHue = Math.floor(Math.random() * 360);
-      container.style.filter = `hue-rotate(${randomHue}deg)`;
+      // container.style.filter = `hue-rotate(${randomHue}deg)`;
 
       // SVG 렌더링
       const svgWrapper = document.createElement('div');
@@ -65,6 +65,23 @@ fetch('data/db_unique.json')
         // svgElement.style.width = '100%';
         // svgElement.style.height = '100%';
         svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+        // SVG 내부에 hue-rotate 필터 정의
+        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+        filter.setAttribute('id', 'hueFilter');
+
+        const feColorMatrix = document.createElementNS('http://www.w3.org/2000/svg', 'feColorMatrix');
+        feColorMatrix.setAttribute('type', 'hueRotate');
+        feColorMatrix.setAttribute('values', randomHue);
+
+        filter.appendChild(feColorMatrix);
+        defs.appendChild(filter);
+        svgElement.insertBefore(defs, svgElement.firstChild);
+
+        // SVG 전체에 필터 적용
+        svgElement.style.filter = 'url(#hueFilter)';
+
       }
 
       // g 요소 순차 애니메이션
