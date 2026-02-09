@@ -128,22 +128,31 @@ svg {
 
 #side {
   position: fixed;
-  top: 367px;
-  right: 0;
+  top: 451px;
+  right: 9px;
   margin: 0;
   padding: 0;
   z-index: 3;
 }
 
 #side>h5 {
-  -webkit-transform: rotate(-180deg);
+  /* -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   -o-transform: rotate(-180deg);
-  transform: rotate(-180deg);
+  transform: rotate(-180deg); */
+
+  -webkit-transform: rotate(270deg) translateX(100%);
+  -moz-transform: rotate(270deg) translateX(100%);
+  -ms-transform: rotate(270deg) translateX(100%);
+  -o-transform: rotate(270deg) translateX(100%);
+  transform: rotate(270deg) translateX(100%);
+  transform-origin: top right;
+
+
   margin-block-start: 0;
   margin-block-end: 0;
-  writing-mode: vertical-rl;
+  /* writing-mode: vertical-rl; */
   font-variation-settings: "wght" 700, "slnt" -14;
   font-size: 9px;
   color: #f592ff;
