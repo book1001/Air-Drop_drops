@@ -99,3 +99,59 @@ fetch('data/db_unique.json')
   .catch(error => {
     console.error('Error loading JSON:', error);
   });
+
+
+
+
+
+
+const downloadBtn = document.getElementById('downloadBtn');
+
+downloadBtn.addEventListener('click', async () => {
+  // 버튼 상태 변경
+  downloadBtn.textContent = 'Downloading';
+  downloadBtn.disabled = true;
+
+  const original = document.querySelector('.entry');
+
+  // 화면에 보이지 않는 클론 생성
+  const clone = original.cloneNode(true);
+  clone.style.position = 'fixed';
+  clone.style.left = '-9999px';
+  clone.style.top = '0';
+  clone.style.transform = 'none';
+
+  // clone 내부의 drawingArea에서 scale 제거
+  const cloneDrawingArea = clone.querySelector('#drawingArea');
+  if (cloneDrawingArea) {
+    cloneDrawingArea.style.transform = 'none';
+  }
+
+  document.body.appendChild(clone);
+
+  try {
+    const canvas = await html2canvas(clone, {
+      backgroundColor: null,
+      width: 750,
+      height: 750,
+      windowWidth: 750,
+      windowHeight: 750,
+      scale: 2,
+      useCORS: true
+    });
+
+    const imageURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = imageURL;
+    link.download = 'image.png';
+    link.click();
+  } catch (error) {
+    console.error('다운로드 중 오류 발생:', error);
+  } finally {
+    // 클론 제거 및 버튼 상태 복구
+    document.body.removeChild(clone);
+    downloadBtn.textContent = 'Down';
+    downloadBtn.disabled = false;
+  }
+});
+

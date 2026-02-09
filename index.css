@@ -46,6 +46,7 @@ button {
   background: transparent;
   border: none;
   font-size: 15px;
+  color: black;
 }
 
 svg {
@@ -158,10 +159,11 @@ svg {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  transform: scale(0.5);
 }
 
 #drawingArea {
-  transform: scale(0.5);
+  /* transform: scale(0.5); */
   /* border: 2px solid black; */
 }
 
