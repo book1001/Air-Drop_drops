@@ -1,0 +1,245 @@
+:root {
+      --shape-color1: #ff85da;
+    --shape-color2: #ff684a;
+    --shape-color3: #fffd44;
+    --shape-width2: 35%;
+    --shape-width3: 25%;
+    --shape-height2: 80%;
+    --shape-height3: 80%;
+    --shape-rotate2: 180deg;
+    --shape-rotate3: -270deg;
+        --scrollbar-width: 0;
+    --scrollbar-height: 0;
+    /* --scrollbar-width: 20px; */
+    --scrollbar-right: 0px;
+    --scrollbar-left: 17px;
+    --log-width: 180px;
+}
+/* ============================================================================= */
+/* Default */
+/* ============================================================================= */
+html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: rgb(236, 235, 121); */
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  cursor: none;
+}
+
+::-webkit-scrollbar { 
+  width: 0;
+  height: 0;
+}
+
+
+button {
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  background: transparent;
+  border: none;
+}
+
+svg {
+  max-width: none !important;
+}
+
+/* ============================================================================= */
+/* Menu */
+/* ============================================================================= */
+#menu-c {
+  position: fixed;
+  top: 13px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  /* color: white;
+  mix-blend-mode: difference; */
+}
+
+#menu-l {
+  position: fixed;
+  top: 13px;
+  left: 10px;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  /* color: white;
+  mix-blend-mode: difference; */
+}
+
+#menu-r {
+  position: fixed;
+  top: 13px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+  z-index: 9;
+  /* color: white;
+  mix-blend-mode: difference; */
+}
+
+
+/* ============================================================================= */
+/* Info */
+/* ============================================================================= */
+.hidden {
+  display: block !important;
+}
+
+#infoText {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+
+#infoText p {
+  padding: 60px 15px 15px 15px;
+}
+/* ============================================================================= */
+
+
+#content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* padding: 100px 0 0 0; */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  font-size: 16px;
+  text-align: center;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2;
+  /* backdrop-filter: blur(9px); */
+}
+
+.entry {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#drawingArea {
+  transform: scale(0.5);
+  /* border: 2px solid black; */
+}
+
+#log {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  width: 240px;
+}
+
+.timestamp {
+  text-decoration: line-through;
+}
+
+svg {
+  max-width: 100%;
+}
+
+.floating {
+    animation: floaty 2s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.longitude {
+  position: fixed;
+  left: 50%;
+  width: 350px;
+
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  font-size: 80px;
+  text-align: right;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.long-T {
+  top: -15px;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.long-B {
+  bottom: -15px;
+  -webkit-transform: translate(-50%, 0) scale(-1);
+  -moz-transform: translate(-50%, 0) scale(-1);
+  -ms-transform: translate(-50%, 0) scale(-1);
+  -o-transform: translate(-50%, 0) scale(-1);
+  transform: translate(-50%, 0) scale(-1);
+}
+
+/* ---------------------------------------- */
+.latitude {
+  position: fixed;
+  top: 50%;
+  height: 300px;
+
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  font-size: 80px;
+  text-align: right;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.lat-L {
+  left: -15px;
+  writing-mode: vertical-rl;
+  -webkit-transform: translate(0, calc(-50% - 30px)) scale(-1);
+  -moz-transform: translate(0, calc(-50% - 30px)) scale(-1);
+  -ms-transform: translate(0, calc(-50% - 30px)) scale(-1);
+  -o-transform: translate(0, calc(-50% - 30px)) scale(-1);
+  translate: translate(0, calc(-50% - 30px)) scale(-1);
+}
+
+.lat-R {
+  right: -15px;
+  writing-mode: vertical-rl;
+  -webkit-transform: translate(0, calc(-50% - 30px));
+  -moz-transform: translate(0, calc(-50% - 30px));
+  -ms-transform: translate(0, calc(-50% - 30px));
+  -o-transform: translate(0, calc(-50% - 30px));
+  transform: translate(0, calc(-50% - 30px));
+}

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  src: url('https://pancake.garden/0_font/NeueHaasGroteskDisplayPro-Black-tabular.woff') format('woff');
+  src: url('https://pancake.garden/0_font/NeueHaasGroteskDisplayPro-Black-tabular.woff2') format('woff2');
+}
+
+
+/* default: selected ================================================ */
+::selection {
+  color: white;
+  background: black;
+}
+
+::-moz-selection {
+  color: white;
+  background: black;
+}
+
+
+/* ============================================================================= */
+/* Default */
+/* ============================================================================= */
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
