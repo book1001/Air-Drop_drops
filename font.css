@@ -4,6 +4,12 @@
   src: url('https://pancake.garden/0_font/NeueHaasGroteskDisplayPro-Black-tabular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'ABCReproVariable';
+  src: url('./font/ABCReproVariable-Regular.ttf') format('truetype');
+}
+
+
 
 /* default: selected ================================================ */
 ::selection {

@@ -27,7 +27,9 @@ html,body {
 
 body {
   /* background-color: rgb(236, 235, 121); */
-  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  /* font-family: 'NeueHaasGroteskDisplayPro-Black'; */
+  font-family: 'ABCReproVariable';
+	font-variation-settings: "wght" 900, "slnt" 0;
   cursor: none;
 }
 
@@ -38,9 +40,12 @@ body {
 
 
 button {
-  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  /* font-family: 'NeueHaasGroteskDisplayPro-Black'; */
+  font-family: 'ABCReproVariable';
+	font-variation-settings: "wght" 900, "slnt" 0;
   background: transparent;
   border: none;
+  font-size: 15px;
 }
 
 svg {
@@ -52,7 +57,7 @@ svg {
 /* ============================================================================= */
 #menu-c {
   position: fixed;
-  top: 13px;
+  top: 9px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
@@ -68,7 +73,7 @@ svg {
 
 #menu-l {
   position: fixed;
-  top: 13px;
+  bottom: 9px;
   left: 10px;
   margin: 0;
   padding: 0;
@@ -77,15 +82,24 @@ svg {
   mix-blend-mode: difference; */
 }
 
-#menu-r {
+#menu-r-t {
   position: fixed;
-  top: 13px;
+  top: 10px;
   right: 10px;
   margin: 0;
   padding: 0;
   z-index: 9;
   /* color: white;
   mix-blend-mode: difference; */
+}
+
+#menu-r {
+  position: fixed;
+  bottom: 9px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+  z-index: 9;
 }
 
 
@@ -153,14 +167,15 @@ svg {
 
 #log {
   position: fixed;
-  bottom: 60px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
+  top: 10px;
+  left: 10px;
+  /* -webkit-transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   -o-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-  width: 240px;
+  transform: translate(-50%, 0); */
+  font-size: 15px;
+  text-wrap: nowrap;
 }
 
 .timestamp {
