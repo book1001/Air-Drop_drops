@@ -47,6 +47,9 @@ fetch('data/db_unique.json')
       const container = document.createElement('div');
       container.className = 'entry';
 
+      const randomHue = Math.floor(Math.random() * 360);
+      container.style.filter = `hue-rotate(${randomHue}deg)`;
+
       // SVG 렌더링
       const svgWrapper = document.createElement('div');
       svgWrapper.innerHTML = entry.svg;
