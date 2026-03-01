@@ -1,3 +1,4 @@
+
 const infoBtn = document.getElementById('infoBtn');
 const imgBook = document.getElementById('imgBook');
 const content = document.getElementById('content');
@@ -10,17 +11,23 @@ infoBtn.addEventListener('click', () => {
   if (imgBook.classList.contains('active')) {
     infoBtn.textContent = "Back"
     content.style.display = "none";
-    textContainer.style.display = "none";
+    document.getElementById('infoText').style.display = "none";
+    document.getElementById('bookText').style.display = "block";
   } else {
     infoBtn.textContent = "Book"
     content.style.display = "block";
-    textContainer.style.display = "block";
+    document.getElementById('infoText').style.display = "block";
+    document.getElementById('bookText').style.display = "none";
   }
 });
 
-// infoBtn.addEventListener('click', () => {
-//   imgBook.classList.toggle('hidden'); // hidden 클래스 토글
-// });
+
+
+
+
+
+
+
 
 
 
