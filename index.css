@@ -61,6 +61,16 @@ svg {
 /* ============================================================================= */
 /* Menu */
 /* ============================================================================= */
+.menu-bg-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background: white;
+  z-index: -1;
+}
+
 .menu-bg {
   position: fixed;
   bottom: 0;
@@ -96,12 +106,12 @@ svg {
   margin: 0;
   padding: 0;
   z-index: 9;
-  /* color: white;
-  mix-blend-mode: difference; */
+  mix-blend-mode: difference;
 }
 
 #menu-r-t>button {
   padding: 9px 10px 40px 40px;
+  color: white;
 }
 
 #menu-l {
@@ -229,6 +239,12 @@ svg {
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+
+#text-container::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
 }
 
 .active {
@@ -314,6 +330,8 @@ svg {
   font-size: 15px;
   text-wrap: nowrap;
   z-index: 9;
+  mix-blend-mode: difference;
+  color: white;
 }
 
 .timestamp {
