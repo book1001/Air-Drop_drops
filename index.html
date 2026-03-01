@@ -62,7 +62,8 @@
 
     <div class="side-container">
       <div id="side">
-        <h5 id="side-text">Drops from the Air</h5>
+        <img id="side-img" style="width:11px;" src="./icon/scroll.svg">
+        <!-- <h5 id="side-text">Drops from the Air</h5> -->
       </div>
     </div>
     
@@ -114,7 +115,8 @@
 <script>
 const textContainer = document.getElementById("text-container");
 const side = document.getElementById("side");
-const sideText = document.getElementById("side-text");
+const sideImg = document.getElementById("side-img");
+// const sideText = document.getElementById("side-text");
 const container = side.parentElement; // .side-container
 
 let isDragging = false;
@@ -154,8 +156,9 @@ side.addEventListener("pointermove", (e) => {
 
   // side 이동
   side.style.top = newTop + "px";
-  sideText.style.color = "white";
-  sideText.style.textShadow = "0 0 2px #464646";
+  sideImg.src = "./icon/scroll_on.svg"
+  // sideText.style.color = "white";
+  // sideText.style.textShadow = "0 0 2px #464646";
 
   // scroll과 정확히 매핑
   const scrollProgress = newTop / maxSideMove;
@@ -165,13 +168,15 @@ side.addEventListener("pointermove", (e) => {
 // 드래그 종료
 side.addEventListener("pointerup", () => {
   isDragging = false;
-  sideText.style.color = "";
-  sideText.style.textShadow = "";
+  sideImg.src = "./icon/scroll.svg"
+  // sideText.style.color = "";
+  // sideText.style.textShadow = "";
 });
 side.addEventListener("pointercancel", () => {
   isDragging = false;
-  sideText.style.color = "";
-  sideText.style.textShadow = "";
+  sideImg.src = "./icon/scroll.svg"
+  // sideText.style.color = "";
+  // sideText.style.textShadow = "";
 });
 
 // -----------------------------

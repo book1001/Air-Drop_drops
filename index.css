@@ -145,9 +145,12 @@ svg {
 .side-container {
   position: fixed;
   /* top: 451px; */
-  top: calc(56dvh + 80px);
+  top: calc(56dvh - 8px);
+  right: -1px;
+  height: calc(44dvh - 18px);
+  /* top: calc(56dvh + 80px);
   right: 9px;
-  height: calc(44dvh - 80px - 26px);
+  height: calc(44dvh - 80px - 26px); */
   margin: 0;
   padding: 0;
   z-index: 11;
@@ -156,6 +159,7 @@ svg {
 #side {
   position: relative;
   top: 0%;
+  padding-left: 5px;
   cursor: grab;
   pointer-events: auto;
   touch-action: none;
