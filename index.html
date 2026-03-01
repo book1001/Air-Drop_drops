@@ -24,6 +24,8 @@
     <!-- ============================================================================= -->
     <div class="menu-bg"></div>
 
+    <div id="log"></div>
+
     <div id="menu-r-t">
       <button id="infoBtn" class="menu-btn font-menu" type="button">
         Book
@@ -57,40 +59,141 @@
       </button>
     </div>
 
-    <div id="side">
-      <h5>Drops from the Air</h5>
-      <!-- <h5>
-        What we call the beginning is often the end. And to make an end is to make a beginning. The end is where we start from. —T.S. Eliot
-      </h5> -->
+    <div class="side-container">
+      <div id="side">
+        <h5 id="side-text">Drops from the Air</h5>
+      </div>
     </div>
+    
 
     <!-- ============================================================================= -->
-    <!-- Menu -->
+    <!-- Text -->
     <!-- ============================================================================= -->
-    <div id="infoText">
-      <p>Drops from the Air translates “Air–Drop,” the interactive work
-exhibited at the Open M Art Fair in May 2025, into the form
-of a publication. At the fair, visitors exchanged hand-drawn
-messages through “Air–Drop”; this volume invites readers to
-glimpse those messages again via the QR code inside. abC
-(art book in China), the organizer of the Open M Art Fair and
-the interview featured in this book, is a major inspiration for
-its creation. Drops from the Air sends deep gratitude to those
-who support cultural communities and nurture cross-border
-friendships among creators. Special thanks to Draw Down
-Books for their generous support and advice.
-<br><br>
-Interview – Team abC: Yue Zhou, Dan Yang, Yaya Liu<br>
-Special Thanks – Draw Down Books: Kathleen Sleboda, Christopher Sleboda<br>
-Published by Halim Lee – leehalim.com @alim.db<br><br>
-© 2025 Halim Lee, the interviewers, and the participants
 
-</p>
+    <div class="img-container">
+      <div id="imgBook">
+        <img src="./img/book1.jpeg">
+      </div>
     </div>
-
 
     <div id="content"></div>
-    <div id="log"></div>
+    
+
+    <div id="text-container">
+      <div class="sectionPadding"></div>
+      <div id="infoText">
+        <p>
+          After many visitors dropped their messages and drawings into Air-Drop during the 2025 Open M Art Fair hosted by abC (art book in China), countless messages have been floating in the air of Air-Drop. The messages they exchanged include rough sketches, witty phrases, self-portraits, pictures of lovers, scenes capturing the beauty of Hangzhou, and even 41 different kinds of cats.
+          <br><br>
+          This page allows you to encounter one of the Drops stored in Air-Drop. If you would like to receive another Drop, please press the Drop button at the bottom right. A new random Drop will appear. If you like it, you can press the Down button at the bottom left to download the image.
+          <br><br>
+          During the exhibition, participants crossed borders in the air of Air-Drop, leaving their messages behind. The Location displayed at the top of the screen shows the latitude and longitude of where each message was dropped. Now, the messages once released across the world travel beyond borders once again to reach you. We all live under the same sky, and there is no need to draw boundaries between us.
+          <br><br>
+          The book Drops from the Air expresses deep gratitude to those who support cultural communities and nurture friendships among creators across borders.
+          <br><br>
+          Interview – Team abC: Yue Zhou, Dan Yang, Yaya Liu<br>
+          Special Thanks – Draw Down Books: Kathleen Sleboda, Christopher Sleboda<br>
+          Published by Halim Lee – leehalim.com @alim.db<br><br>
+          © 2025 Halim Lee, the interviewers, and the participants
+        </p>
+      </div>
+    </div>
+
+
+
+<script>
+const textContainer = document.getElementById("text-container");
+const side = document.getElementById("side");
+const sideText = document.getElementById("side-text");
+const container = side.parentElement; // .side-container
+
+let isDragging = false;
+let startY = 0;
+let startTop = 0;
+
+// 드래그 시작
+side.addEventListener("pointerdown", (e) => {
+
+  const maxScroll = textContainer.scrollHeight - textContainer.clientHeight;
+
+  // 🔴 스크롤 없으면 드래그 시작 안 함
+  if (maxScroll <= 0) return;
+
+  isDragging = true;
+  startY = e.clientY;
+  startTop = side.offsetTop;
+  side.setPointerCapture(e.pointerId);
+});
+
+
+
+// 드래그 중
+side.addEventListener("pointermove", (e) => {
+  if (!isDragging) return;
+
+  const deltaY = e.clientY - startY;
+
+  const maxSideMove = container.clientHeight - side.clientHeight;
+  const maxScroll = textContainer.scrollHeight - textContainer.clientHeight;
+
+  // 새 위치 계산
+  let newTop = startTop + deltaY;
+
+  // 범위 제한
+  newTop = Math.max(0, Math.min(maxSideMove, newTop));
+
+  // side 이동
+  side.style.top = newTop + "px";
+  sideText.style.color = "white";
+  sideText.style.textShadow = "0 0 2px #464646";
+
+  // scroll과 정확히 매핑
+  const scrollProgress = newTop / maxSideMove;
+  textContainer.scrollTop = scrollProgress * maxScroll;
+});
+
+// 드래그 종료
+side.addEventListener("pointerup", () => {
+  isDragging = false;
+  sideText.style.color = "";
+  sideText.style.textShadow = "";
+});
+side.addEventListener("pointercancel", () => {
+  isDragging = false;
+  sideText.style.color = "";
+  sideText.style.textShadow = "";
+});
+
+// -----------------------------
+// scroll → side 동기화
+// -----------------------------
+textContainer.addEventListener("scroll", () => {
+  const maxScroll = textContainer.scrollHeight - textContainer.clientHeight;
+  const maxSideMove = container.clientHeight - side.clientHeight;
+
+  const progress = maxScroll === 0 ? 0 : textContainer.scrollTop / maxScroll;
+  const newTop = progress * maxSideMove;
+
+  side.style.top = newTop + "px";
+});
+
+// -----------------------------
+// cursor도 자동 변경 (UX 완성)
+// -----------------------------
+function updateDraggableState() {
+  const maxScroll = textContainer.scrollHeight - textContainer.clientHeight;
+
+  if (maxScroll <= 0) {
+    side.style.cursor = "default";
+  } else {
+    side.style.cursor = "grab";
+  }
+}
+
+updateDraggableState();
+window.addEventListener("resize", updateDraggableState);
+</script>
+        
 
 
     <!-- ============================================================================= -->

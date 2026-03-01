@@ -1,0 +1,17 @@
+@media only screen and (max-width: 800px) {
+
+  #content {
+    height: 70%;
+  }
+
+  .entry {
+    transform: scale(0.5);
+  }
+
+  #infoText p {
+    font-size: 13px;
+  }
+
+
+}
+

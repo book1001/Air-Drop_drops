@@ -1,9 +1,22 @@
 const infoBtn = document.getElementById('infoBtn');
-const infoText = document.getElementById('infoText');
+const imgBook = document.getElementById('imgBook');
+const content = document.getElementById('content');
 
 infoBtn.addEventListener('click', () => {
-  infoText.classList.toggle('hidden'); // hidden 클래스 토글
+  // imgBook은 hidden 토글
+  imgBook.classList.toggle('active');
+
+  // content는 imgBook이 hidden이면 보이고, 아니면 숨기기
+  if (imgBook.classList.contains('active')) {
+    content.classList.remove('active');
+  } else {
+    content.classList.add('active');
+  }
 });
+
+// infoBtn.addEventListener('click', () => {
+//   imgBook.classList.toggle('hidden'); // hidden 클래스 토글
+// });
 
 
 
@@ -163,7 +176,7 @@ downloadBtn.addEventListener('click', async () => {
     const imageURL = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.href = imageURL;
-    link.download = 'image.png';
+    link.download = 'Drop.png';
     link.click();
   } catch (error) {
     console.error('다운로드 중 오류 발생:', error);
