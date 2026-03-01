@@ -1,5 +1,5 @@
 :root {
-      --shape-color1: #ff85da;
+    --shape-color1: #ff85da;
     --shape-color2: #ff684a;
     --shape-color3: #fffd44;
     --shape-width2: 35%;
@@ -187,9 +187,12 @@ svg {
 /* ============================================================================= */
 .img-container {
   position: fixed;
-  top: 80px;
+  top: 0;
   left: 10px;
   width: calc(100% - 20px);
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   /* height: calc(100% - 35px); */
   z-index: 3;
   /* mix-blend-mode: plus-lighter; */
@@ -197,6 +200,17 @@ svg {
 
 #imgBook {
   display: none;
+  height: 100%;
+  padding-top: 80px;
+}
+
+#imgBook p {
+  padding: 35px 0 10px 0;
+  /* padding: 371px 0 15px 0; */
+  font-variation-settings: "wght" 700, "slnt" 0;
+  font-size: 14px;
+  text-align: justify;
+  color: #919191;
 }
 
 #text-container {
@@ -293,6 +307,7 @@ svg {
   transform: translate(-50%, 0); */
   font-size: 15px;
   text-wrap: nowrap;
+  z-index: 9;
 }
 
 .timestamp {

@@ -8,9 +8,13 @@ infoBtn.addEventListener('click', () => {
 
   // content는 imgBook이 hidden이면 보이고, 아니면 숨기기
   if (imgBook.classList.contains('active')) {
-    content.classList.remove('active');
+    infoBtn.textContent = "Back"
+    content.style.display = "none";
+    textContainer.style.display = "none";
   } else {
-    content.classList.add('active');
+    infoBtn.textContent = "Book"
+    content.style.display = "block";
+    textContainer.style.display = "block";
   }
 });
 
