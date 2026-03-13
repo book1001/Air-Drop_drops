@@ -31,7 +31,7 @@ infoBtn.addEventListener('click', () => {
 // =============================================================================
 // json fetch
 // =============================================================================
-fetch('data/db_unique_test.json')
+fetch('data/db_unique.json')
   .then(response => response.json())
   .then(data => {
     const content = document.getElementById('content');
