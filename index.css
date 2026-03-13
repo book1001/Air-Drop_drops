@@ -61,7 +61,62 @@ svg {
 /* ============================================================================= */
 /* Menu */
 /* ============================================================================= */
-.menu-bg {
+#menu-top-l {
+  position: fixed;
+  top: 9px;
+  left: 10px;
+  /* -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); */
+  font-size: 15px;
+  text-wrap: nowrap;
+  z-index: 9;
+}
+
+#menu-top-r {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 9;
+}
+
+#menu-top-r>button {
+  padding: 9px 10px 40px 40px;
+}
+
+#menu-bottom-l {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  /* color: white;
+  mix-blend-mode: difference; */
+}
+
+#menu-bottom-l>button {
+  padding: 40px 40px 9px 10px;
+}
+
+#menu-bottom-r {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 9;
+}
+
+#menu-bottom-r>button {
+  padding: 40px 10px 9px 40px;
+}
+
+.menu-bottom-bg {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -73,63 +128,9 @@ svg {
 }
 
 
-#menu-c {
-  position: fixed;
-  top: 9px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-  -moz-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -o-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-  margin: 0;
-  padding: 0;
-  z-index: 10;
-  /* color: white;
-  mix-blend-mode: difference; */
-}
-
-#menu-r-t {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  z-index: 9;
-}
-
-#menu-r-t>button {
-  padding: 9px 10px 40px 40px;
-}
-
-#menu-l {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  z-index: 10;
-  /* color: white;
-  mix-blend-mode: difference; */
-}
-
-#menu-l>button {
-  padding: 40px 40px 9px 10px;
-}
-
-#menu-r {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  z-index: 9;
-}
-
-#menu-r>button {
-  padding: 40px 10px 9px 40px;
-}
-
+/* ============================================================================= */
+/* Side Scroll */
+/* ============================================================================= */
 .side-container {
   position: fixed;
   /* top: 451px; */
@@ -157,6 +158,10 @@ svg {
   cursor: grabbing;
 }
 
+#side-img {
+  width: 11px;
+}
+
 #side-text {
   /* -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
@@ -170,7 +175,6 @@ svg {
   -o-transform: rotate(270deg) translateX(100%);
   transform: rotate(270deg) translateX(100%);
   transform-origin: top right;
-
 
   margin-block-start: 0;
   margin-block-end: 0;
@@ -186,6 +190,53 @@ svg {
 }
 
     
+
+/* ============================================================================= */
+/* Content */
+/* ============================================================================= */
+
+
+#content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* height: 100%; */
+  /* padding: 100px 0 0 0; */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  font-family: 'NeueHaasGroteskDisplayPro-Black';
+  font-size: 16px;
+  text-align: center;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2;
+  /* backdrop-filter: blur(9px); */
+}
+
+.entry {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transform: scale(1);
+}
+
+#drawingArea {
+  /* transform: scale(0.5); */
+  /* border: 2px solid black; */
+}
+
+
 /* ============================================================================= */
 /* Info */
 /* ============================================================================= */
@@ -244,7 +295,8 @@ svg {
 }
 
 .sectionPadding {
-  height: 56dvh;
+  /* height: 56dvh; */
+  height: 55dvh;
 }
 
 #infoText {
@@ -281,61 +333,6 @@ svg {
   color: #919191;
 }
 /* ============================================================================= */
-
-
-#content {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* height: 100%; */
-  /* padding: 100px 0 0 0; */
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  font-family: 'NeueHaasGroteskDisplayPro-Black';
-  font-size: 16px;
-  text-align: center;
-  
-  overflow-x: hidden;
-  overflow-y: auto;
-  z-index: 2;
-  /* backdrop-filter: blur(9px); */
-}
-
-.entry {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  transform: scale(1);
-}
-
-#drawingArea {
-  /* transform: scale(0.5); */
-  /* border: 2px solid black; */
-}
-
-#log {
-  position: fixed;
-  top: 9px;
-  left: 10px;
-  /* -webkit-transform: translate(-50%, 0);
-  -moz-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -o-transform: translate(-50%, 0);
-  transform: translate(-50%, 0); */
-  font-size: 15px;
-  text-wrap: nowrap;
-  z-index: 9;
-}
 
 .timestamp {
   text-decoration: line-through;

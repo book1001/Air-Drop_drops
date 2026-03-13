@@ -28,15 +28,14 @@ infoBtn.addEventListener('click', () => {
 
 
 
-
-
-
-
+// =============================================================================
+// json fetch
+// =============================================================================
 fetch('data/db_unique.json')
   .then(response => response.json())
   .then(data => {
     const content = document.getElementById('content');
-    const log = document.getElementById('log');
+    const log = document.getElementById('menu-top-l');
     const entries = Array.isArray(data) ? data : [data];
 
     // 랜덤 선택 함수
@@ -148,7 +147,9 @@ fetch('data/db_unique.json')
 
 
 
-
+// =============================================================================
+// Png Download
+// =============================================================================
 const downloadBtn = document.getElementById('downloadBtn');
 
 downloadBtn.addEventListener('click', async () => {
