@@ -82,6 +82,7 @@ svg {
 }
 
 #menu-top-r {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
