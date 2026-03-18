@@ -31,6 +31,26 @@ a {
   text-decoration: none;
 }
 
+a:link {
+  color: #919191;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #919191;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #919191;
+  text-decoration: none;
+}
+
+a:active {
+  color: #919191;
+  text-decoration: none;
+}
+
 p {
   margin-block-start: 0;
   margin-block-end: 0;
