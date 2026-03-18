@@ -11,11 +11,17 @@ infoBtn.addEventListener('click', () => {
   if (imgBook.classList.contains('active')) {
     infoBtn.textContent = "Back"
     content.style.display = "none";
+    side.style.display = "none";
+    textContainer.style.pointerEvents = "none";
+    imgContainer.style.pointerEvents = "auto";
     document.getElementById('infoText').style.display = "none";
     document.getElementById('bookText').style.display = "block";
   } else {
     infoBtn.textContent = "Book"
     content.style.display = "block";
+    side.style.display = "block";
+    textContainer.style.pointerEvents = "auto";
+    imgContainer.style.pointerEvents = "none";
     document.getElementById('infoText').style.display = "block";
     document.getElementById('bookText').style.display = "none";
   }

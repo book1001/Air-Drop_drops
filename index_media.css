@@ -1,4 +1,8 @@
 @media only screen and (max-width: 800px) {
+  #menu-top-r {
+    display: block;
+  }
+
   #text-container {
     display: block;
   }
@@ -15,6 +19,8 @@
     font-size: 13px;
   }
 
-
+  #bookText p {
+    font-size: 13px;
+  }
 }
 
