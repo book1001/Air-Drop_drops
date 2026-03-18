@@ -260,6 +260,7 @@ svg {
 /* Info */
 /* ============================================================================= */
 #img-container {
+  display: none;
   position: fixed;
   top: 0;
   left: 10px;
@@ -275,7 +276,6 @@ svg {
 }
 
 #imgBook {
-  display: none;
   height: 100%;
   padding-top: 80px;
 }

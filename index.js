@@ -5,10 +5,10 @@ const content = document.getElementById('content');
 
 infoBtn.addEventListener('click', () => {
   // imgBook은 hidden 토글
-  imgBook.classList.toggle('active');
+  imgContainer.classList.toggle('active');
 
   // content는 imgBook이 hidden이면 보이고, 아니면 숨기기
-  if (imgBook.classList.contains('active')) {
+  if (imgContainer.classList.contains('active')) {
     infoBtn.textContent = "Back"
     content.style.display = "none";
     side.style.display = "none";
@@ -27,6 +27,25 @@ infoBtn.addEventListener('click', () => {
   }
 });
 
+
+const downloadBtn = document.getElementById('downloadBtn');
+const randomBtn = document.getElementById('randomBtn');
+
+function setOppositeState() {
+    imgContainer.classList.remove('active');
+
+    infoBtn.textContent = "Book";
+    content.style.display = "block";
+    side.style.display = "block";
+    textContainer.style.pointerEvents = "auto";
+    imgContainer.style.pointerEvents = "none";
+    document.getElementById('infoText').style.display = "block";
+    document.getElementById('bookText').style.display = "none";
+}
+
+// 버튼에 적용
+downloadBtn.addEventListener('click', setOppositeState);
+randomBtn.addEventListener('click', setOppositeState);
 
 
 
@@ -156,7 +175,7 @@ fetch('data/db_unique.json')
 // =============================================================================
 // Png Download
 // =============================================================================
-const downloadBtn = document.getElementById('downloadBtn');
+// const downloadBtn = document.getElementById('downloadBtn');
 
 downloadBtn.addEventListener('click', async () => {
   // 버튼 상태 변경
