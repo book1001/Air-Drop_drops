@@ -100,7 +100,6 @@ svg {
   width: 100%;
   height: 200px;
   background: white;
-  z-index: -1;
   pointer-events: none;
 }
 
