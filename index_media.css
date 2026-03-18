@@ -1,4 +1,7 @@
 @media only screen and (max-width: 800px) {
+  #text-container {
+    display: block;
+  }
 
   #content {
     height: 70%;

@@ -271,9 +271,15 @@ svg {
 }
 
 #text-container {
+  display: none;
   position: fixed;
   top: 9px;
-  left: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
   width: calc(100% - 20px);
   height: calc(100% - 35px);
   z-index: 3;
